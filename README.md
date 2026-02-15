@@ -41,10 +41,9 @@ pnpm install
 ```bash
 pnpm dev
 ```
+4. The app will run on http://localhost:3000.
 
-## The app will run on http://localhost:3000.
-
-4. Project Structure
+## Project Structure
    app/
    layout.tsx ← ThemeProvider for Dark/Light mode
    page.tsx ← Parent component: manages state, search, filter, theme toggle, localStorage
@@ -56,34 +55,34 @@ pnpm dev
    types/
    task.ts ← Type definitions for Task and Priority
 
-5. How to Use
+## How to Use
 
-1.Click Add Task → Dialog opens
+- **Click Add Task → Dialog opens**
 
-2.Enter task title and select priority
+- **Enter task title and select priority**
 
-3.Click Add Task or press Enter
+- **Click Add Task or press Enter**
 
-4.If the title is empty, a red error message is displayed
+- **If the title is empty, a red error message is displayed**
 
-5.Toggle tasks as completed or delete tasks as needed
+- **Toggle tasks as completed or delete tasks as needed**
 
-6.Use the search input to filter tasks by title
+- **Use the search input to filter tasks by title**
 
-7.Use the All / Active / Completed buttons to filter tasks
+- **Use the All / Active / Completed buttons to filter tasks**
 
-8.Click the Dark/Light toggle button to switch themes
+- **Click the Dark/Light toggle button to switch themes**
 
-6. Technical Notes
+## Technical Notes
 
- All interactive components use use "client"
+ - **All interactive components use use "client"**
 
- State is managed at the page.tsx level to reduce unnecessary re-renders
+ - **State is managed at the page.tsx level to reduce unnecessary re-renders**
 
- LocalStorage is used for task persistence
+ - **LocalStorage is used for task persistence**
 
- shadcn/ui + Tailwind CSS for a modern, responsive, dark-mode-ready interface
+ - **shadcn/ui + Tailwind CSS for a modern, responsive, dark-mode-ready interface**
 
- Inline validation avoids browser alerts, showing errors directly under the input
+ - **Inline validation avoids browser alerts, showing errors directly under the input**
 
- TodoList
+
