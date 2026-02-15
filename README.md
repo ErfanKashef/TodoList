@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini Task Manager
 
-## Getting Started
+A lightweight and responsive **Task Management App** built with **Next.js 13 (App Router)** and **shadcn/ui**, featuring **Dark/Light theme**, **Dialog-based task addition**, **Search**, **Filter**, and **LocalStorage persistence**.
 
-First, run the development server:
+## Features
+
+- **Add Task via Dialog**: Add tasks with title and priority selection
+- **Inline Validation**: Displays a red error message if the title is empty
+- **Toggle Task**: Mark tasks as completed or not completed
+- **Delete Task**: Remove tasks easily
+- **Priority Sorting**: Tasks sorted by priority (High > Medium > Low) and completion status
+- **Search Tasks**: Filter tasks by title
+- **Filter Tasks**: Show All / Active / Completed tasks
+- **Dark/Light Mode**: Toggle theme with intuitive icons (Sun/Moon)
+- **LocalStorage**: Automatically saves tasks to persist after page reload
+- **Responsive UI**: Modern and clean interface with Tailwind CSS
+
+## Requirements
+
+- Node.js 18+
+- **pnpm** (or npm)
+- Next.js 13+
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd <your-project-folder>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Start the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
+## The app will run on http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+4. Project Structure
+app/
+  layout.tsx          ← ThemeProvider for Dark/Light mode
+  page.tsx            ← Parent component: manages state, search, filter, theme toggle, localStorage
+components/
+  AddTaskDialog.tsx   ← Dialog for adding tasks with validation
+  TaskList.tsx        ← Renders task list with sorting and toggle/delete functionality
+  TaskItem.tsx        ← Individual task item with toggle, delete, and priority badge
+  ThemeToggle.tsx     ← Dark/Light theme toggle button with icon
+types/
+  task.ts             ← Type definitions for Task and Priority
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. How to Use
+## 1.Click Add Task → Dialog opens
+## 2.Enter task title and select priority
+## 3.Click Add Task or press Enter
+## 4.If the title is empty, a red error message is displayed
+## 5.Toggle tasks as completed or delete tasks as needed
+## 6.Use the search input to filter tasks by title
+## 7.Use the All / Active / Completed buttons to filter tasks
+## 8.Click the Dark/Light toggle button to switch themes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6. Technical Notes
 
-## Deploy on Vercel
+## All interactive components use use "client"
+## State is managed at the page.tsx level to reduce unnecessary re-renders
+## LocalStorage is used for task persistence
+## shadcn/ui + Tailwind CSS for a modern, responsive, dark-mode-ready interface
+## Inline validation avoids browser alerts, showing errors directly under the input
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# TodoList
